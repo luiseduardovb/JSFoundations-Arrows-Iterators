@@ -21,8 +21,7 @@ const logger = function (array) {
  *   C = (F - 32) * (5/9)
  ************************************/
 const toCelsius = function (temperatures) {
-  let tempCelc = temperatures.map((faren) => (faren - 32) * (5 / 9));
-  return tempCelc;
+  return temperatures.map((faren) => (faren - 32) * (5 / 9));
 };
 
 /**************************************
@@ -52,10 +51,11 @@ const hottestDays = function (temperatures, threshhold) {
  *       all previous functions
  *******************************************/
 const logHottestDays = (temperatures, threshhold) => {
-  let tempExceeding = temperatures.filter((faren) => faren > threshhold);
-  let tempInCelc = tempExceeding.map((temps) => ((temps - 32) * 5) / 9);
+  // let tempExceeding = temperatures.filter((faren) => faren > threshhold);
+  // let tempInCelc = tempExceeding.map((temps) => ((temps - 32) * 5) / 9);
 
-  tempInCelc.forEach((temps) => console.log(temps));
+  // tempInCelc.forEach((temps) => console.log(temps)); this is how i had solved it
+  logger(toCelsius(hottestDays(temperatures, threshhold)));
 };
 
 module.exports = { logger, toCelsius, hottestDays, logHottestDays };
